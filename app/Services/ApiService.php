@@ -21,9 +21,12 @@ class ApiService
      */
     public function createDiscountCode(Merchant $merchant): array
     {
+        $id = rand(0, 100000);
+        $code = Str::uuid()->toString();
+
         return [
-            'id' => rand(0, 100000),
-            'code' => Str::uuid()
+            'id' => $id,
+            'code' => $code,
         ];
     }
 
